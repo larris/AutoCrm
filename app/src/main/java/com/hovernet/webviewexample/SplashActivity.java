@@ -37,7 +37,8 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 // Close SplashActivity
                 finish();
-                String urlString = "http://85.72.57.52:8080/apex/f?p=103:19";
+                String urlString = "http://petrolmak.mine.nu:8080/apex/f?p=100";
+                //tring urlString = "http://85.72.57.52:8080/apex/f?p=103:19";
                 //check to see if url is reachable
                 try {
                     URL url = new URL(urlString);
