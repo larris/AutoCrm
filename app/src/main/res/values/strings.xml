@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Auto CRM</string>
-    <string name="no_connection">Δεν υπάρχει σύνδεση με το Ιντερνετ</string>
+    <string name="no_connection">No internet connection</string>
+    <string name="save_to_prefs_btn">Save to Prefs</string>
+    <string name="editext_error_msg">A Url Needed</string>
+    <string name="save_success">Saved to Shared preferences</string>
 </resources>
