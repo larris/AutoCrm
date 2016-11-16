@@ -42,23 +42,22 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
 
 
+                SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefsFile", MODE_PRIVATE);
+                String primaryUrl = preferences.getString("url1", null);
+                String secondaryUrl = preferences.getString("url2", null);
 
-                SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefsFile",MODE_PRIVATE);
-                String primaryUrl = preferences.getString("url1",null);
-                String secondaryUrl = preferences.getString("url2",null);
+                Log.d("Get preferences = ", primaryUrl == null ? "primaryUrl not found" : primaryUrl);
+                Log.d("Get preferences = ", secondaryUrl == null ? "secondaryUrl not found" : secondaryUrl);
 
-                Log.d("Get preferences = ",primaryUrl == null ? "primaryUrl not found" : primaryUrl);
-                Log.d("Get preferences = ",secondaryUrl == null ? "secondaryUrl not found" : secondaryUrl);
-
-                if (primaryUrl == null && secondaryUrl == null ){
+                if (primaryUrl == null && secondaryUrl == null) {
                     //Start Params Activity
-                    Intent i = new Intent(SplashActivity.this,ParamsActivity.class);
+                    Intent i = new Intent(SplashActivity.this, ParamsActivity.class);
                     startActivity(i);
-                }else {
-                    String urlString = checkUrl(primaryUrl,secondaryUrl);
+                } else {
+                    String urlString = checkUrl(primaryUrl, secondaryUrl);
                     // Start MainActivity
-                    Intent i = new Intent(SplashActivity.this,MainActivity.class);
-                    i.putExtra("urlString",urlString);
+                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    i.putExtra("urlString", urlString);
                     startActivity(i);
                 }
 
@@ -70,8 +69,8 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     @NonNull
-    private String checkUrl(String primaryUrl,String secondaryUrl) {
-        String urlString = primaryUrl ; //"http://petrolmak.mine.nu:8080/apex/f?p=100";
+    private String checkUrl(String primaryUrl, String secondaryUrl) {
+        String urlString = primaryUrl; //"http://petrolmak.mine.nu:8080/apex/f?p=100";
         //tring urlString = "http://85.72.57.52:8080/apex/f?p=103:19";
         //check to see if url is reachable
         try {
@@ -88,7 +87,7 @@ public class SplashActivity extends AppCompatActivity {
             }
 
         } catch (IOException e) {
-            Log.d("IOException",e.getMessage());
+            Log.d("IOException", e.getMessage());
         }
         return urlString;
     }

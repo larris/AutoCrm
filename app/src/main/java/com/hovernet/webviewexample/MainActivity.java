@@ -1,6 +1,7 @@
 package com.hovernet.webviewexample;
 
 import android.os.Bundle;
+
 import org.apache.cordova.DroidGap;
 
 public class MainActivity extends DroidGap {
