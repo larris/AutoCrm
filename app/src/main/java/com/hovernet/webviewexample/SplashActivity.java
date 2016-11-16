@@ -2,12 +2,10 @@ package com.hovernet.webviewexample;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Window;
-
 
 import java.io.IOException;
 import java.net.CookieHandler;
@@ -22,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
 
     // Set Duration of the Splash Screen
     long Delay = 8000;
+
 
 
     @Override
@@ -54,7 +53,7 @@ public class SplashActivity extends AppCompatActivity {
                     Intent i = new Intent(SplashActivity.this, ParamsActivity.class);
                     startActivity(i);
                 } else {
-                    String urlString = checkUrl(primaryUrl, secondaryUrl);
+                    String urlString  = checkUrl(primaryUrl, secondaryUrl);
                     // Start MainActivity
                     Intent i = new Intent(SplashActivity.this, MainActivity.class);
                     i.putExtra("urlString", urlString);
@@ -68,8 +67,7 @@ public class SplashActivity extends AppCompatActivity {
         runSplash.schedule(showSplash, Delay);
     }
 
-    @NonNull
-    private String checkUrl(String primaryUrl, String secondaryUrl) {
+    public String checkUrl(String primaryUrl, String secondaryUrl) {
         String urlString = primaryUrl; //"http://petrolmak.mine.nu:8080/apex/f?p=100";
         //tring urlString = "http://85.72.57.52:8080/apex/f?p=103:19";
         //check to see if url is reachable
@@ -91,4 +89,5 @@ public class SplashActivity extends AppCompatActivity {
         }
         return urlString;
     }
+
 }
