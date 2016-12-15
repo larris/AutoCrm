@@ -69,7 +69,7 @@ public class SplashActivity extends AppCompatActivity {
 
     public String checkUrl(String primaryUrl, String secondaryUrl) {
         String urlString = primaryUrl; //"http://petrolmak.mine.nu:8080/apex/f?p=100";
-        //tring urlString = "http://85.72.57.52:8080/apex/f?p=103:19";
+        //String urlString = "http://85.72.57.52:8080/apex/f?p=103:19";
         //check to see if url is reachable
         try {
             URL url = new URL(urlString);
